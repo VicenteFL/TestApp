@@ -18,6 +18,11 @@ componentes: Componente[] = [
     icon: 'american-football',
     name: 'Action Sheet',
     redirectTo: '/action-sheet'
+  },
+  {
+    icon: 'beaker',
+    name: 'Avatar',
+    redirectTo: '/avatar'
   }
 ]
 
