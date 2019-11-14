@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="title_activity_main">TestApp</string>
+    <string name="package_name">com.TestApp.app</string>
+    <string name="fileprovider_authority">com.TestApp.app.fileprovider</string>
+    <string name="custom_url_scheme">com.TestApp.app</string>
+</resources>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import {registerWebPlugin} from '@capacitor/core';
+import {OAuth2Client} from '@byteowls/capacitor-oauth2';
+
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -23,5 +26,10 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  ngOnInit(){
+    console.log("Register custom capacitor plugins")
+    registerWebPlugin(OAuth2Client);
   }
 }

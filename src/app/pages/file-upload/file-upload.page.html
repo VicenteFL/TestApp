@@ -1,0 +1,27 @@
+<app-header titulo="File Upload"></app-header>
+
+<ion-content>
+ <ion-card>
+    <ion-card-header>
+        <ion-card-title>File Upload</ion-card-title>
+    </ion-card-header>
+     
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ion-item lines="none">
+                
+          
+            <input type="file" class="inputfile" id="foto" (change)="onFileChange($event)" [formControl]="form.controls['foto']" #file/>
+            <label for="foto">
+                <ion-icon slot="start" name="images"></ion-icon>
+                Choose an Image...
+                </label> 
+
+            <ion-img slot="end" class="resize" [src]="imgURL" *ngIf="imgURL"></ion-img>    
+            <ion-button type="submit" slot="end">Submit</ion-button>
+        </ion-item>
+        <ion-card-content *ngIf="imgURL"> Image Preview </ion-card-content>
+    </form>
+
+</ion-card>
+
+</ion-content>

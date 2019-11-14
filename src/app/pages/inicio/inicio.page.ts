@@ -43,6 +43,11 @@ componentes: Componente[] = [
     icon: 'calendar',
     name: 'DateTime',
     redirectTo: '/date-time'
+  },
+  {
+    icon: 'folder-open',
+    name: 'File Upload',
+    redirectTo: '/file-upload'
   }
 ]
 
