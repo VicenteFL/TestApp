@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl  } from '@angular/forms';
 
 
@@ -12,6 +12,7 @@ export class FileUploadPage implements OnInit {
   loading: boolean = false;
   imgURL: any;
   form: FormGroup;
+  @Input('name') public userName: string;
 
   constructor(private fb: FormBuilder) {
     
