@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-import {registerWebPlugin} from '@capacitor/core';
-import {OAuth2Client} from '@byteowls/capacitor-oauth2';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -13,11 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate: any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    this.sideMenu()
     this.initializeApp();
   }
 
@@ -29,7 +28,66 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    console.log("Register custom capacitor plugins")
-    registerWebPlugin(OAuth2Client);
+  }
+
+  sideMenu(){
+    this.navigate = [
+      {
+        icon: 'appstore',
+        name: 'Alert',
+        redirectTo: '/alert'
+      },
+      
+      {
+        icon: 'american-football',
+        name: 'Action Sheet',
+        redirectTo: '/action-sheet'
+      },
+      {
+        icon: 'beaker',
+        name: 'Avatar',
+        redirectTo: '/avatar'
+      },
+      {
+        icon: 'radio-button-on',
+        name: 'Botones y router',
+        redirectTo: '/botones'
+      },
+      {
+        icon: 'card',
+        name: 'Cards',
+        redirectTo: '/card'
+      },
+      {
+        icon: 'checkmark-circle-outline',
+        name: 'Checkbox',
+        redirectTo: '/check'
+      },
+      {
+        icon: 'calendar',
+        name: 'DateTime',
+        redirectTo: '/date-time'
+      },
+      {
+        icon: 'folder-open',
+        name: 'File Upload',
+        redirectTo: '/file-upload'
+      },
+      {
+        icon: 'git-pull-request',
+        name: 'Request',
+        redirectTo: '/request'
+      },
+      {
+        icon: 'locate',
+        name: 'Location',
+        redirectTo:'/location'
+      },
+      {
+        icon: 'map',
+        name: 'Google Map',
+        redirectTo:'/map'
+      }
+    ]
   }
 }

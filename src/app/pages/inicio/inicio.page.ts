@@ -63,7 +63,11 @@ componentes: Componente[] = [
     icon: 'map',
     name: 'Google Map',
     redirectTo:'/map'
-  },
+  },{
+    icon: 'albums',
+    name: 'Menu',
+    redirectTo:'/menu/noticias'
+  }
 ]
 
   constructor() { }

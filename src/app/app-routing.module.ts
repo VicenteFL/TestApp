@@ -15,6 +15,10 @@ const routes: Routes = [
   { path: 'request', loadChildren: './pages/request/request.module#RequestPageModule' },
   { path: 'location', loadChildren: './pages/location/location.module#LocationPageModule' },
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  //{ path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule' },
+  //{ path: 'obras', loadChildren: './pages/obras/obras.module#ObrasPageModule' },
+
 ];
 
 @NgModule({
