@@ -12,6 +12,9 @@ const routes: Routes = [
   { path: 'check', loadChildren: './pages/check/check.module#CheckPageModule' },
   { path: 'date-time', loadChildren: './pages/date-time/date-time.module#DateTimePageModule' },
   { path: 'file-upload', loadChildren: './pages/file-upload/file-upload.module#FileUploadPageModule' },
+  { path: 'request', loadChildren: './pages/request/request.module#RequestPageModule' },
+  { path: 'location', loadChildren: './pages/location/location.module#LocationPageModule' },
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
 ];
 
 @NgModule({

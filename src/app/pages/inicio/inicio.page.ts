@@ -48,7 +48,22 @@ componentes: Componente[] = [
     icon: 'folder-open',
     name: 'File Upload',
     redirectTo: '/file-upload'
-  }
+  },
+  {
+    icon: 'git-pull-request',
+    name: 'Request',
+    redirectTo: '/request'
+  },
+  {
+    icon: 'locate',
+    name: 'Location',
+    redirectTo:'/location'
+  },
+  {
+    icon: 'map',
+    name: 'Google Map',
+    redirectTo:'/map'
+  },
 ]
 
   constructor() { }

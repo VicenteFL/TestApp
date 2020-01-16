@@ -1,0 +1,6 @@
+<app-header titulo="Location"> </app-header>
+
+<ion-content>
+  <ion-button (click)="getCurrentPosition()"> Get Coordinates</ion-button>
+  <ion-text *ngIf="coorinates"> {{coordinates}}</ion-text>
+</ion-content>

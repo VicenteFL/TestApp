@@ -1,0 +1,9 @@
+<app-header titulo="HTTP Request"> </app-header>
+
+<ion-content>
+    <ion-button (click)=searchData()>Do Request</ion-button>
+    <ion-text slot=start *ngIf="results"> {{data}}</ion-text>
+
+    <ion-item></ion-item>
+    <ion-button (click)=postData()>Do Post Request</ion-button>
+</ion-content>
