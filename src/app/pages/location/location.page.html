@@ -1,6 +1,24 @@
 <app-header titulo="Location"> </app-header>
 
 <ion-content>
-  <ion-button (click)="getCurrentPosition()"> Get Coordinates</ion-button>
-  <ion-text *ngIf="coorinates"> {{coordinates}}</ion-text>
+
+  <ion-card>
+    <ion-item>
+      <ion-button slot="start" (click)="distanciaUniversidad()"> 1. Obtener Distancia a la ETSIT</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item> 
+      <ion-text *ngIf="!distanceIsValid"> La distancia ha de ser menor de un kilómetro para poder continuar. Calcule la distancia.</ion-text>
+      <ion-button *ngIf="distanceIsValid" slot="start" (click)="fichar()"> 2. Fichar</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="this.time.minute">
+    <ion-item *ngIf="this.time.minute"> 
+      <ion-text *ngIf="this.time.minute"> Hora de entrada: {{this.time.hour}}:{{this.time.minute}}</ion-text>
+    </ion-item>
+  </ion-card>
+
 </ion-content>
