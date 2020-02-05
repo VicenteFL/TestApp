@@ -16,6 +16,9 @@ const routes: Routes = [
   { path: 'location', loadChildren: './pages/location/location.module#LocationPageModule' },
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+ // { path: 'privacidad', loadChildren: './pages/privacidad/privacidad.module#PrivacidadPageModule' },
+  //{ path: 'mi-perfil', loadChildren: './pages/mi-perfil/mi-perfil.module#MiPerfilPageModule' },
+  //{ path: 'ajustes', loadChildren: './pages/ajustes/ajustes.module#AjustesPageModule' },
   //{ path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule' },
   //{ path: 'obras', loadChildren: './pages/obras/obras.module#ObrasPageModule' },
 

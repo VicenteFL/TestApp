@@ -1,19 +1,41 @@
 <ion-split-pane>
   <ion-menu side="start" contentId="content" menuId="menuID">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
+
+  
     <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false">
-          <ion-item *ngFor="let p of pages" [routerLink]="p.redirectTo" routerDirection="root" [class.active-item]="selectedPath === p.redirectTo">
-              <ion-icon [name]="p.icon" slot="start"></ion-icon>
-                 {{p.name}} 
+      
+        <div *ngFor="let p of pages">
+          <ion-menu-toggle auto-hide="false" *ngIf="p.redirectTo">
+                <ion-item  [routerLink]="p.redirectTo" routerDirection="root" [class.active-item]="selectedPath === p.redirectTo">
+                    <ion-icon [name]="p.icon" slot="start"></ion-icon>
+                      {{p.name}} 
+                </ion-item>
+          </ion-menu-toggle>
+
+             
+          <ion-item button *ngIf="p.subPages" [class.active-parent]="p.open" 
+                    (click)="p.open = !p.open" detail="false">
+              <ion-icon slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
+              <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
+              <ion-label>{{p.name}}</ion-label>
           </ion-item>
-        </ion-menu-toggle>
-        </ion-list>
+
+          <ion-list *ngIf="p.open">
+              <ion-item  *ngFor="let s of p.subPages" [routerLink]="s.redirectTo" routerDirection="root" class="sub-item">
+                  <ion-icon [name]="s.icon" slot="start"></ion-icon>
+                    {{s.title}} 
+              </ion-item>
+          </ion-list>
+        
+            
+          
+        </div>
+      
     </ion-content>
   </ion-menu>
 

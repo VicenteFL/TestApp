@@ -13,14 +13,20 @@ const routes: Routes = [
     path: '',
     component: MenuPage,
     children: [
-      {path: 'noticias', loadChildren: '../noticias/noticias.module#NoticiasPageModule'},
-      {path: 'obras', loadChildren: '../obras/obras.module#ObrasPageModule'}
+      {path: 'noticias',    loadChildren: '../noticias/noticias.module#NoticiasPageModule'},
+      {path: 'obras',       loadChildren: '../obras/obras.module#ObrasPageModule'},
+      {path: 'ajustes',     loadChildren: '../ajustes/ajustes.module#AjustesPageModule'},
+      {path: 'miperfil',    loadChildren: '../mi-perfil/mi-perfil.module#MiPerfilPageModule'},
+      {path: 'privacidad',  loadChildren: '../privacidad/privacidad.module#PrivacidadPageModule' },
+      
+
     ]
   },
   {
     path:'',
     redirectTo:'/menu/noticias'
   }
+  
 ];
 
 @NgModule({

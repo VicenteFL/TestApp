@@ -31,6 +31,7 @@ export class LocationPage implements OnInit {
   }
 
   async getCurrentPosition() {
+    console.log('antes de obtener localizacion')
     const coordinates = await Geolocation.getCurrentPosition();
     console.log('Current', coordinates);
     this.lat1 = coordinates.coords.latitude;

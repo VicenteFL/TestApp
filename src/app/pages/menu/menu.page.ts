@@ -12,14 +12,31 @@ export class MenuPage implements OnInit {
     {
       icon: 'paper',
       name: 'Noticias',
-      redirectTo: '/menu/noticias'
+      redirectTo: '/menu/noticias',
     },
     
     {
       icon: 'warning',
       name: 'Obras',
-      redirectTo: '/menu/obras'
-    }
+      redirectTo: '/menu/obras',
+    },
+
+    {
+      name: 'Ajustes',
+      open: false,
+      subPages: [
+    
+        {
+          title:'Mi Perfil',
+          redirectTo: '/menu/miperfil',
+          icon: 'person'
+        },
+        {
+          title:'Ajustes de Privacidad',
+          redirectTo: '/menu/privacidad',
+          icon: 'lock'
+        },] 
+    },
   ]
   
     selectedPath='';

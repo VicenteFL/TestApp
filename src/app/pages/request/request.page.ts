@@ -21,7 +21,7 @@ export class RequestPage implements OnInit {
   ngOnInit() {}
 
   searchData(){
-    this.results= this.http.get('http://localhost:3000/api/employee');
+    this.results= this.http.get('http://192.168.1.138:8000/api/employee');
     this.results.subscribe(data =>{
       console.log(data);
       this.data = data.Empleado1[0][0].email;
@@ -37,7 +37,7 @@ export class RequestPage implements OnInit {
       pc: 30009
     }
     console.log(employee)
-    this.http.post('http://localhost:3000/api/employee', employee).subscribe((response)=>{
+    this.http.post('http://192.168.1.138:8000/api/employee', employee).subscribe((response)=>{
       console.log(response)
     });
   }
