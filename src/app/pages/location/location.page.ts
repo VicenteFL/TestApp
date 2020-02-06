@@ -14,7 +14,7 @@ export class LocationPage implements OnInit {
   lon1: any;
   distanceIsValid: boolean = false;
   time:any = {
-    fullDate: null,
+    fullDate: Date,
     hour: null,
     minute: null
   } 
