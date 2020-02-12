@@ -18,19 +18,23 @@
           </ion-menu-toggle>
 
              
-          <ion-item button *ngIf="p.subPages" [class.active-parent]="p.open" 
-                    (click)="p.open = !p.open" detail="false">
+            <ion-item button *ngIf="p.subPages" [class.active-parent]="p.open" 
+                      (click)="p.open = !p.open" detail="false">
               <ion-icon slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
               <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
               <ion-label>{{p.name}}</ion-label>
           </ion-item>
 
+          
           <ion-list *ngIf="p.open">
+            <ion-menu-toggle auto-hide="false">
               <ion-item  *ngFor="let s of p.subPages" [routerLink]="s.redirectTo" routerDirection="root" class="sub-item">
                   <ion-icon [name]="s.icon" slot="start"></ion-icon>
                     {{s.title}} 
               </ion-item>
+            </ion-menu-toggle>
           </ion-list>
+        
         
             
           
@@ -42,4 +46,3 @@
   <ion-router-outlet id="content" main></ion-router-outlet>
   
 </ion-split-pane>
-

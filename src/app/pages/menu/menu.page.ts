@@ -22,6 +22,12 @@ export class MenuPage implements OnInit {
     },
 
     {
+      icon: 'clipboard',
+      name: 'Signature Pad',
+      redirectTo: '/menu/signpad',
+    },
+
+    {
       name: 'Ajustes',
       open: false,
       subPages: [
@@ -31,6 +37,7 @@ export class MenuPage implements OnInit {
           redirectTo: '/menu/miperfil',
           icon: 'person'
         },
+        
         {
           title:'Ajustes de Privacidad',
           redirectTo: '/menu/privacidad',
