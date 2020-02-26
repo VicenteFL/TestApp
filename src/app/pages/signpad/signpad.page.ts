@@ -1,9 +1,23 @@
 import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 import * as jsPDF from 'jspdf';
+import * as PDF2Pic from 'pdf2pic';
+
+
+/* const pdf = new PDF2Pic({
+  density: 100,           // output pixels per inch
+  savename: "untitled",   // output file name
+  savedir: "./images",    // output file location
+  format: "png",          // output file format
+  size: "600x600"         // output size in pixels
+}); */
+
 
 
 var doc = new jsPDF();
+/* var PDFImage = require("pdf-image").PDFImage; 
+var pdfImage = new PDFImage("/assets/NotasUPCT.pdf"); */
+
 
 @Component({
   selector: 'app-signpad',
@@ -36,13 +50,10 @@ export class SignpadPage implements OnInit {
   public Cancel: string;
 
   constructor() {
-   /*  this.signatureImage = this.signaturePad.toDataURL();
-    this.Cancel = this.signatureImage; */
+  
   }
 
   drawComplete() {
-  /* this.signatureImage = this.signaturePad.toDataURL().replace('data:image/png;base64,', '');
-  console.log(this.signatureImage) */
     this.onSave.emit(this.signaturePad.toDataURL()); 
     this.onSaveHandler(this.signaturePad.toDataURL());
   }
@@ -59,14 +70,25 @@ export class SignpadPage implements OnInit {
   onSaveHandler(data: any) {
     console.log('onsave clicked');
     console.log(data);
-    //window.open(data);
+    //window.open(data)
+
+    /* pdf.convert("/assets/NotasUPCT.pdf", -1).then((resolve) => {
+      console.log("image converter successfully!");
+    
+      return resolve;
+    }); */
+
     doc.addImage(data, 'PNG', 120, 270, 100, 20);
     doc.output('dataurlnewwindow');
     //window.open(doc);
+
+
+
   }
  
   ngOnInit() {
   }
 
+  
 
 }

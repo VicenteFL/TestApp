@@ -16,6 +16,9 @@ const routes: Routes = [
   { path: 'location', loadChildren: './pages/location/location.module#LocationPageModule' },
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  { path: 'send-pdf', loadChildren: './pages/send-pdf/send-pdf.module#SendPdfPageModule' },
+  //{ path: 'documents', loadChildren: './pages/documents/documents.module#DocumentsPageModule' },
+
   //{ path: 'signpad', loadChildren: './pages/signpad/signpad.module#SignpadPageModule' },
 
   //{ path: 'privacidad', loadChildren: './pages/privacidad/privacidad.module#PrivacidadPageModule' },

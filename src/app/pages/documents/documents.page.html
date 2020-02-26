@@ -3,29 +3,31 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Sign Pad</ion-title>
+    <ion-title>Documentos Pendientes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-item>
-      <input id='pdf' type='file'/>
+  <ion-list *ngIf="!docSelected">
+    <ion-item *ngFor="let d of docs.docname; let i = index"  [routerLink]="" (click)="loadSign(d,i)" detail>
+      <ion-icon slot = "start" name="document">
+      </ion-icon>
+      <ion-label>
+        {{d}}
+      </ion-label>
     </ion-item>
+  </ion-list>
 
-    <!--Buscar para pasar pdf a imagenes en js/Angular/Ionic 
-        jspdf diferente de pdfjs
-        Igual pdfjs en enagular puede ayudarme -->
-  </ion-card>
-
-
-
-  <ion-card>
+  <ion-item *ngIf="docSelected">
+    <ion-text>Firmando:  &nbsp;</ion-text>
+    <ion-text> {{docSigning}} </ion-text>
+  </ion-item>
+  <ion-card *ngIf="docSelected">
     <div class="signature-pad">
       <signature-pad  [options]="this.signaturePadOptions" id="signatureCanvas"></signature-pad>
     </div>
   </ion-card>
-  <ion-grid>
+  <ion-grid *ngIf="docSelected">
     <ion-row>
       <ion-col>
           <ion-button expand="block"  color="warning" (click)="this.drawClear()">Borrar</ion-button>
@@ -35,4 +37,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
+
+
+</ion-content> 

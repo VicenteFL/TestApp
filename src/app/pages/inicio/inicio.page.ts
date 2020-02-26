@@ -40,6 +40,11 @@ componentes: Componente[] = [
     redirectTo: '/check'
   },
   {
+    icon: 'send',
+    name: 'Enviar Pdf',
+    redirectTo:'/send-pdf'
+  },
+  {
     icon: 'calendar',
     name: 'DateTime',
     redirectTo: '/date-time'
@@ -63,7 +68,8 @@ componentes: Componente[] = [
     icon: 'map',
     name: 'Google Map',
     redirectTo:'/map'
-  },{
+  },
+  {
     icon: 'albums',
     name: 'Menu',
     redirectTo:'/menu/noticias'

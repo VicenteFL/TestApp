@@ -22,6 +22,12 @@ export class MenuPage implements OnInit {
     },
 
     {
+      icon: 'copy',
+      name: 'Documentos',
+      redirectTo: '/menu/documents',
+    },
+
+    {
       icon: 'clipboard',
       name: 'Signature Pad',
       redirectTo: '/menu/signpad',
