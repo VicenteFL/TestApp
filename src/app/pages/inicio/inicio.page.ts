@@ -45,6 +45,16 @@ componentes: Componente[] = [
     redirectTo:'/send-pdf'
   },
   {
+    icon: 'construct',
+    name: 'Crear Obra',
+    redirectTo:'/new-construction'
+  },
+  {
+    icon: 'paper',
+    name: 'Enviar Noticias',
+    redirectTo:'/create-news'
+  },
+  {
     icon: 'calendar',
     name: 'DateTime',
     redirectTo: '/date-time'

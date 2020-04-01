@@ -48,7 +48,7 @@ export class DocumentsPage implements OnInit {
   }
 
   async readListOfDocs(){
-    await this.http.get('http://192.168.1.137:3000/api/user/' + email).toPromise().then(
+    await this.http.get('http://192.168.1.45:3000/api/user/' + email).toPromise().then(
       res => { // Success
         this.jsonRes = JSON.parse(JSON.stringify(res))
         this.docs.docname = this.jsonRes.docsname;
@@ -68,7 +68,7 @@ export class DocumentsPage implements OnInit {
 
     console.log(this.docidSelected);
 
-    await this.http.get('http://192.168.1.137:3000/pdf/' + this.docidSelected).toPromise().then(
+    await this.http.get('http://192.168.1.45:3000/pdf/' + this.docidSelected).toPromise().then(
       res => { // Success
         let jsonRes = JSON.parse(JSON.stringify(res))
         console.log(jsonRes.doc)
@@ -95,7 +95,7 @@ export class DocumentsPage implements OnInit {
     console.log('onsave clicked');
     let jsonRes = JSON.parse(JSON.stringify(data))
     console.log([jsonRes]);
-    //window.open(data)
+    
 
     this.loading = true;
     // In a real-world app you'd have a http request / service call here like
@@ -105,9 +105,17 @@ export class DocumentsPage implements OnInit {
       this.loading = false;
     }, 1000);
 
-    this.http.post('http://192.168.1.137:3000/sign', {photo: jsonRes, docid: this.docidSelected}).subscribe((response)=>{
-      console.log(response)
-      window.open(response.toString());
+    this.http.post('http://192.168.1.45:3000/sign', {photo: jsonRes, docid: this.docidSelected}).subscribe((response)=>{
+      let jsonImg = JSON.parse(JSON.stringify(response))
+      let i = 0;
+      var numPags = jsonImg.Lista[0].length;
+      for (let i = 0; i < numPags; i++){
+        doc.addImage(jsonImg.Lista[0][i], 'PNG', 0,0,210,297)
+        doc.addImage(jsonRes, 'PNG', 120, 270, 100,20)
+        doc.addPage()
+      }
+      doc.deletePage(numPags+1)
+      doc.output('dataurlnewwindow');
     });
 
     /* doc.addImage(data, 'PNG', 120, 270, 100, 20);

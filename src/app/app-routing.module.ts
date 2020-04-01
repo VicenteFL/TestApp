@@ -17,6 +17,12 @@ const routes: Routes = [
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'send-pdf', loadChildren: './pages/send-pdf/send-pdf.module#SendPdfPageModule' },
+  
+  { path: 'create-news', loadChildren: './pages/create-news/create-news.module#CreateNewsPageModule' },
+  { path: 'new-construction', loadChildren: './pages/new-construction/new-construction.module#NewConstructionPageModule' },
+  //{ path: 'fichar', loadChildren: './pages/fichar/fichar.module#FicharPageModule' },
+
+
   //{ path: 'documents', loadChildren: './pages/documents/documents.module#DocumentsPageModule' },
 
   //{ path: 'signpad', loadChildren: './pages/signpad/signpad.module#SignpadPageModule' },
@@ -32,7 +38,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  ], 
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

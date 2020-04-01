@@ -19,7 +19,8 @@ const routes: Routes = [
       {path: 'miperfil',    loadChildren: '../mi-perfil/mi-perfil.module#MiPerfilPageModule'},
       {path: 'privacidad',  loadChildren: '../privacidad/privacidad.module#PrivacidadPageModule'},
       {path: 'signpad',     loadChildren: '../signpad/signpad.module#SignpadPageModule'},
-      {path: 'documents',  loadChildren: '../documents/documents.module#DocumentsPageModule'}
+      {path: 'documents',   loadChildren: '../documents/documents.module#DocumentsPageModule'},
+      {path: 'fichar',      loadChildren: '../fichar/fichar.module#FicharPageModule' },
       
 
     ]

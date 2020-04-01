@@ -50,7 +50,7 @@ export class SendPdfPage implements OnInit {
 
     console.log(this.sendObject);
     
-    this.http.post('http://192.168.1.137:3000/pdf', this.sendObject).subscribe((response)=>{
+    this.http.post('http://192.168.1.52:3000/pdf', this.sendObject).subscribe((response)=>{
       console.log(response)
     });
   }
