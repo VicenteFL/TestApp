@@ -1,1 +1,7 @@
-{}
+{
+  "appId": "com.TestApp.app",
+  "appName": "TestApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
