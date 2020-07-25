@@ -5,5 +5,3 @@ Test application with Ionic FrameWork 4 (Angular). This trial was used to try di
 
 ![Screenshot1](https://github.com/VicenteFL/TestApp/blob/master/Images/Imagen1.png)
 
-<img src="https://github.com/VicenteFL/TestApp/blob/master/Images/Imagen1.png"/>
-
