@@ -8,5 +8,38 @@
 </ion-header>
 
 <ion-content>
+  <ion-list *ngIf="!consSelected">
+    <ion-item *ngFor="let o of obras; let i = index"  [routerLink]="" (click)="loadCons(o)" detail>
+      <ion-icon slot = "start" name="construct">
+      </ion-icon>
+      <ion-label>
+        {{o.title}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="consSelected">
+    <br>
+    <ion-card-header>
+      <ion-card-title>{{construction.title}}</ion-card-title> 
+    </ion-card-header>
+    <br/>
+    <ion-card-content>
+      
+      <textarea readonly>{{construction.description}}</textarea>
+      <ion-item lines="none">
+        <ion-icon name="calendar"></ion-icon>
+        <pre>  {{day}}/{{month}}/{{year}}      </pre>
+        <ion-icon name="locate"></ion-icon>
+        <pre>  {{construction.city}}</pre>
+        <ion-img *ngIf="construction.img" slot="end" class="resize" [src]="construction.img"></ion-img>
+      </ion-item>
+      <br>
+      <ion-button (click)="inscription(construction.constructionid)" expand="block">¡Estoy Interesado!</ion-button>
+    </ion-card-content>
+    
+  </ion-card> 
+
+  
 
 </ion-content>

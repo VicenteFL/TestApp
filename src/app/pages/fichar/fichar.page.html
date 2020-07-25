@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fichar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{message}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="message2">
+      <ion-item lines="none" *ngIf="entrada">
+        <ion-button color="success" slot="start" (click)="saveMove(true)">Entrada en '{{construction.title}}'</ion-button> 
+      </ion-item>
+      <ion-item lines="none" *ngIf="!entrada">
+        <ion-button color="danger" slot="start" (click)="saveMove(false)">Salida de '{{construction.title}}'</ion-button> 
+      </ion-item>
+      <br/>
+      <ion-text>{{message2}}</ion-text>
+      <br/> <br>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-list *ngIf="updated">
+    <ion-item *ngFor="let r of registrations">
+      <ion-text *ngIf="r.status">Entrada </ion-text>
+      <ion-text *ngIf="!r.status">Salida </ion-text>
+      <ion-text> &nbsp; en: {{r.time}}</ion-text>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

@@ -1,0 +1,77 @@
+<app-header titulo="Crear Obra"> </app-header>
+
+<ion-content>
+  <ion-card>
+     <ion-card-header>
+         <ion-card-title>Nueva Obra</ion-card-title>
+     </ion-card-header>
+      
+     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+         
+
+        <ion-item>
+          <ion-label position="floating">Título</ion-label>
+          <ion-input required type="text" [formControl]="form.controls['title']"></ion-input>
+        </ion-item>
+        
+        <br>
+
+        <ion-item>
+          <ion-label position="floating">Contenido</ion-label>
+          <ion-textarea rows="6" required [formControl]="form.controls['description']"></ion-textarea>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Fecha de Inicio</ion-label>
+          <ion-datetime required placeholder="Fecha de Inicio" max='2025' display-format="DD M YYYY" cancelText="Cancelar" doneText = "Hecho" [formControl]="form.controls['starttime']"> </ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ciudad</ion-label>
+          <ion-input required type="text" [formControl]="form.controls['city']"></ion-input>
+        </ion-item>
+
+        
+
+        <ion-item lines="none">
+          <ion-label position="fixed">Ubicación</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Latitud (decimales)</ion-label>
+          <ion-input required type="number" [formControl]="form.controls['latitude']"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label position="stacked">Longitud (decimales)</ion-label>
+          <ion-input required type="number" [formControl]="form.controls['longitude']"></ion-input>
+        </ion-item>
+
+        
+
+        <br>
+
+        <ion-item lines="none">
+                 
+           
+          <input type="file" class="inputfile" accept="image/*" id="fileImg" (change)="onFileChange($event)" [formControl]="form.controls['fileImg']" #file/>
+          <label for="fileImg">
+
+              <ion-icon slot="start" name="document"></ion-icon>
+              Choose a File...
+              </label> 
+          
+          <ion-text slot="start" *ngIf="nameImg"> {{this.nameImg}} </ion-text> 
+          <ion-button type="submit" slot="end" [disabled]="!form.valid">Submit</ion-button>
+        </ion-item>
+        <ion-card-content *ngIf="fileURL"> File Name Preview </ion-card-content>
+
+        <br>
+
+     </form>
+ 
+ </ion-card>
+ 
+ </ion-content>

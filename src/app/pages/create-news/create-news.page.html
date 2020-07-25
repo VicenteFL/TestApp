@@ -1,0 +1,50 @@
+<app-header titulo="Enviar Noticias"> </app-header>
+
+<ion-content>
+  <ion-card>
+     <ion-card-header>
+         <ion-card-title>News Upload</ion-card-title>
+     </ion-card-header>
+      
+     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+         
+
+        <ion-item lines="none">
+          <ion-label position="floating">Título</ion-label>
+          <ion-input type="text" [formControl]="form.controls['title']"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label position="floating">Subtítulo</ion-label>
+          <ion-input type="text" [formControl]="form.controls['subtitle']"></ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-label position="floating">Contenido</ion-label>
+          <ion-textarea [formControl]="form.controls['content']"></ion-textarea>
+        </ion-item>
+
+
+        <ion-item lines="none">
+                 
+           
+          <input type="file" class="inputfile" accept="image/*" id="fileImg" (change)="onFileChange($event)" [formControl]="form.controls['fileImg']" #file/>
+          <label for="fileImg">
+
+              <ion-icon slot="start" name="document"></ion-icon>
+              Choose a File...
+              </label> 
+          
+          <ion-text slot="start" *ngIf="nameImg"> {{this.nameImg}} </ion-text> 
+          <ion-button type="submit" slot="end">Submit</ion-button>
+        </ion-item>
+        <ion-card-content *ngIf="fileURL"> File Name Preview </ion-card-content>
+
+        <br>
+
+     </form>
+ 
+ </ion-card>
+ 
+ </ion-content>
+

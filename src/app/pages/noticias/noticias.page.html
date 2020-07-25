@@ -8,89 +8,38 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-list *ngIf="!itemSelected">
+  <ion-card *ngFor="let n of noticias">
     <br>
     <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
+      <ion-img class="resize" [src]="n.img"></ion-img> 
       <ion-text> </ion-text>
     </ion-item>
     <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
+      <ion-card-subtitle>{{n.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{n.title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+      <ion-button expand="block" color="medium" size="small" slot="end" (click)=load(n)>Ver Noticia</ion-button>
+     <!--  <textarea onkeyup="textAreaAdjust(this)" readonly>{{n.content}}</textarea> -->
     </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <br>
-    <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
-      <ion-text> </ion-text>
-    </ion-item>
-    <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <br>
-    <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
-      <ion-text> </ion-text>
-    </ion-item>
-    <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <br>
-    <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
-      <ion-text> </ion-text>
-    </ion-item>
-    <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <br>
-    <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
-      <ion-text> </ion-text>
-    </ion-item>
-    <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <br>
-    <ion-item lines="none">
-      <ion-img class="resize" [src]="'/assets/basket.jpg'"></ion-img> 
-      <ion-text> </ion-text>
-    </ion-item>
-    <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-    </ion-card-content>
-  </ion-card>
+  </ion-card> 
+</ion-list>
+<ion-card *ngIf="itemSelected">
+  <br>
+  <ion-item lines="none">
+    <ion-img class="resize" [src]="item.img"></ion-img> 
+    <ion-text> </ion-text>
+  </ion-item>
+  <ion-card-header>
+    <ion-card-subtitle>{{item.subtitle}}</ion-card-subtitle>
+    <ion-card-title>{{item.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    
+   <textarea onkeyup="textAreaAdjust(this)" readonly>{{item.content}}</textarea>
+   <ion-button expand="block" color="medium" size="small" slot="end" (click)=unload()>Volver</ion-button>
+  </ion-card-content>
+</ion-card> 
 </ion-content>
 

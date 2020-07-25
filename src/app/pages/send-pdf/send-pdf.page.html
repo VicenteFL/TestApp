@@ -1,0 +1,35 @@
+<app-header titulo="Enviar PDF"> </app-header>
+
+<ion-content>
+  <ion-card>
+     <ion-card-header>
+         <ion-card-title>File Upload</ion-card-title>
+     </ion-card-header>
+      
+     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+         <ion-item lines="none">
+                 
+           
+             <input type="file" class="inputfile" accept="application/pdf" id="filePdf" (change)="onFileChange($event)" [formControl]="form.controls['filePdf']" #file/>
+             <label for="filePdf">
+
+                 <ion-icon slot="start" name="document"></ion-icon>
+                 Choose a File...
+                 </label> 
+             
+             <ion-text slot="start" *ngIf="namePdf"> {{this.namePdf}} </ion-text> 
+             <ion-button type="submit" slot="end">Submit</ion-button>
+         </ion-item>
+         <ion-card-content *ngIf="fileURL"> File Name Preview </ion-card-content>
+
+         <ion-item lines="none">
+          <ion-label position="floating">Destinatario (email)</ion-label>
+          <ion-input type="text" [formControl]="form.controls['destinatario']"></ion-input>
+        </ion-item>
+        <br>
+
+     </form>
+ 
+ </ion-card>
+ 
+ </ion-content>
