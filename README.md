@@ -4,4 +4,6 @@ Test application with Ionic FrameWork 4 (Angular). This trial was used to try di
 ## Screenshots
 
 ![Screenshot1](https://github.com/VicenteFL/TestApp/blob/master/Images/Imagen1.png)
+![Screenshot2](https://github.com/VicenteFL/TestApp/blob/master/Images/Imagen2.png)
+
 
