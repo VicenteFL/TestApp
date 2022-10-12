@@ -34,7 +34,7 @@
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
     "hummus": "^1.0.108",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.5.1",
     "ng2-file-upload": "^1.4.0",
     "pdf2pic": "^1.3.12",
     "rxjs": "~6.5.1",
